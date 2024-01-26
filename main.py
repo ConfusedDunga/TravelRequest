@@ -40,14 +40,15 @@ def add_data_to_image(template_path, user_data, uber_screenshot=None):
 
     # Set custom font size
     font_size = 46
-    font = ImageFont.truetype("arial.ttf", font_size)
-
+    font = ImageFont.load_default()
+    
     # Example: Adding user data to specific locations
     draw.text((310, 1280), f"{user_data['Date']}", fill="black", font=font, antialias=True)
     draw.text((670, 600), f"{user_data['Name']}", fill="black", font=font, antialias=True)
     draw.text((600, 1280), f"{user_data['From']}", fill="black", font=font, antialias=True)
     draw.text((990, 1280), f"{user_data['To']}", fill="black", font=font, antialias=True)
     draw.text((1500, 1280), f"{user_data['Travelling Mode']}", fill="black", font=font, antialias=True)
+
 
     # Paste Uber screenshot if provided
     if uber_screenshot is not None:
