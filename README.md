@@ -1,6 +1,8 @@
-# Streamlit Image Generator
+# Request form generator
 
-This Streamlit app allows users to generate customized images by filling in form details and uploading an optional Uber screenshot. The generated image is displayed, and users can download it for various purposes, such as documentation or printing.
+This Streamlit app allows users to generate customized travel forms by filling in form details and uploading an optional Uber screenshot. The generated image is displayed, and users can download it for various purposes, such as documentation or printing.
+
+This form generator was initially intended for Nepal Bankers' Association and for their travel request purposes. However you can clone it and use it according to your need.
 
 ## Features
 
@@ -14,7 +16,7 @@ This Streamlit app allows users to generate customized images by filling in form
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/your-repo.git
+   git clone https://github.com/ConfusedDunga/TravelRequest
    
 2. **Install the required dependencies::**
 
@@ -23,7 +25,7 @@ This Streamlit app allows users to generate customized images by filling in form
 3. **Install the required dependencies::**
 
    ```bash
-   streamlit run app.py
+   streamlit run main.py
 4. **Fill in the form details, upload an optional Uber screenshot, and click the "Generate and Download Image" button.::**
 5. **View the generated image and use the provided download button to save the image locally.**
 
