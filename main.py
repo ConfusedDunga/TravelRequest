@@ -40,8 +40,9 @@ def add_data_to_image(template_path, user_data, uber_screenshot=None):
 
     # Set custom font size
     font_size = 46
-    font = ImageFont.truetype("arial.ttf", font_size)
-
+    font_path = "arial.ttf"
+    font = ImageFont.truetype(font_path, font_size)
+    
     # Example: Adding user data to specific locations
     draw.text((310, 1280), f"{user_data['Date']}", fill="black", font=font, antialias=True)
     draw.text((670, 600), f"{user_data['Name']}", fill="black", font=font, antialias=True)
@@ -66,6 +67,7 @@ def add_data_to_image(template_path, user_data, uber_screenshot=None):
     # You can add more data based on your template
     img = img.convert("RGB")
     return img
+
 
 def main():
     st.title("Nepal Bankers' Association")
