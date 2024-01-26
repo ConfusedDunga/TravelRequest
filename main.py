@@ -40,7 +40,8 @@ def add_data_to_image(template_path, user_data, uber_screenshot=None):
 
     # Set custom font size
     font_size = 46
-    font = ImageFont.load_default()
+    font_path = ImageFont.load_default().getpath()
+    font = ImageFont.truetype(font_path, font_size)
     
     # Example: Adding user data to specific locations
     draw.text((310, 1280), f"{user_data['Date']}", fill="black", font=font, antialias=True)
