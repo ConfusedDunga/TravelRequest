@@ -40,15 +40,16 @@ def add_data_to_image(template_path, user_data, uber_screenshot=None):
 
     # Set custom font size
     font_size = 46
-    font_path = "arial.ttf"
-    font = ImageFont.truetype(font_path, font_size)
-    
+    font = ImageFont.truetype("arial.ttf", font_size)
+
     # Example: Adding user data to specific locations
     draw.text((310, 1280), f"{user_data['Date']}", fill="black", font=font, antialias=True)
     draw.text((670, 600), f"{user_data['Name']}", fill="black", font=font, antialias=True)
     draw.text((600, 1280), f"{user_data['From']}", fill="black", font=font, antialias=True)
-    draw.text((990, 1280), f"{user_data['To']}", fill="black", font=font, antialias=True)
+    draw.text((960, 1280), f"{user_data['To']}", fill="black", font=font, antialias=True)
     draw.text((1500, 1280), f"{user_data['Travelling Mode']}", fill="black", font=font, antialias=True)
+    draw.text((1900, 1280), f"{user_data['Total Amount']}", fill="black", font=font, antialias=True)
+    draw.text((310, 820), f"{user_data['Purpose of Travelling']}", fill="black", font=font, antialias=True)
 
     # Paste Uber screenshot if provided
     if uber_screenshot is not None:
@@ -68,7 +69,6 @@ def add_data_to_image(template_path, user_data, uber_screenshot=None):
     img = img.convert("RGB")
     return img
 
-
 def main():
     st.title("Nepal Bankers' Association")
     st.subheader("Staff Travel Form")
@@ -77,8 +77,10 @@ def main():
     date = st.date_input("Date")
     name = st.text_input("Name")
     travel_from = st.text_input("From")
-    travel_to = st.text_input("To")
+    travel_to = st.text_area("To")
     travel_mode = st.text_input("Travelling Mode")
+    total_amount = st.number_input("Total Amount")
+    purpose = st.text_area("Purpose of Travelling")
 
     # Upload Uber screenshot
     uber_screenshot = st.file_uploader("Upload Uber Screenshot", type=["png", "jpg", "jpeg"])
@@ -91,6 +93,8 @@ def main():
             "From": travel_from,
             "To": travel_to,
             "Travelling Mode": travel_mode,
+            "Total Amount" : total_amount,
+            "Purpose of Travelling" : purpose, 
         }
 
         # Process Uber screenshot if provided
